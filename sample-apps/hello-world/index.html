@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World | K8s</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 1.5rem;
+        line-height: 1.5;
+      }
+      .card {
+        max-width: 720px;
+        width: 100%;
+        border: 1px solid burlywood;
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: cornflowerblue;
+        padding: 2.5rem;
+      }
+      .subhead {
+        font-size: 1.2rem;
+        color: #476481;
+        margin-bottom: 2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 2px dashed #cbd5e1;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hello World</h1>
+      <div class="card">
+        <div class="subhead">sample app · stateless · ready for k8s</div>
+
+        <div>
+          <div>
+            <span>📍 namespace</span>
+            <span>default</span>
+          </div>
+          <div>
+            <span>📦 image</span>
+            <span>hello-world:k8s-demo</span>
+          </div>
+          <div>
+            <span>🔄 replicas</span>
+            <span>1</span>
+          </div>
+          <div>
+            <span>🐳 pod</span>
+            <span>hello-world-[]</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
