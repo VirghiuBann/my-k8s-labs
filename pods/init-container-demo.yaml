@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-demo
+  labels:
+    app: init-demo
+spec:
+  initContainers:
+    - name: init-demo
+      image: busybox:1.37.0
+      command: ['sh', '-c']
+      args:
+        - |
+          echo "This is init container starting..."
+          echo "Downloading configuration files..."
+          sleep 5
+          echo "Configuration data from init container" > /work-dir/config.txt
+          echo "Setup complete!"
+          ls -la /work-dir/
+      volumeMounts:
+        - name: workdir
+          mountPath: /work-dir
+
+  containers:
+    - name: main-app
+      image: busybox:1.37.0
+      command: ['sh', '-c']
+      args:
+        - |
+          echo "Main container starting..."
+          echo "Reading config from init container:"
+          cat /work-dir/config.txt
+          echo "Main application running..."
+          sleep 300
+      volumeMounts:
+        - name: workdir
+          mountPath: /work-dir
+      resources:
+        requests:
+          memory: '64Mi'
+          cpu: '250m'
+        limits:
+          memory: '128Mi'
+          cpu: '500m'
+
+  volumes:
+    - name: workdir
+      emptyDir: {}
