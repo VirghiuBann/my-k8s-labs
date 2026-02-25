@@ -23,11 +23,6 @@ out/
 .env.production.local
 *.env
 
-# Package manager files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # IDE and Editor files
 .vscode/
 .idea/
