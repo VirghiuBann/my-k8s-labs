@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod0
+spec:
+  containers:
+    - name: ctr-nginx
+      image: nginx:alpine
+      envFrom:
+        - configMapRef:
+            name: my-cm0

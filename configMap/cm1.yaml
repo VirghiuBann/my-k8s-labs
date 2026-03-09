@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm1-db
+
+data:
+  DB_driver: 'mysql'
+  DB_host: 'db'
+  DB_port: '3306'
